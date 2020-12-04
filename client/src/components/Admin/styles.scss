@@ -1,0 +1,660 @@
+.admin__navigation
+{
+	font-family: 'Open Sans', sans-serif, arial;
+	font-weight: 600;
+	font-size: 0.9rem;
+	
+	color: $black;
+	background-color: $white;
+}
+
+.admin__side-nav
+{
+	position: fixed;
+	display: inline-flex;
+	flex-flow: column wrap;
+	align-items: center;
+	z-index: 2;
+	
+	width: 12rem;
+	height: 100%;
+	
+	color: $white;
+	background-color: $black;
+	
+	@include shadow( $blur: 10px, $spread: 5px, $trans: 0.5 );
+	
+	a
+	{
+		width: 100%;
+		padding: 1rem .5rem;
+		text-decoration: none;
+		color: $white;
+		border-bottom: 1px solid $grey;
+		
+		svg
+		{
+			width: 2rem !important;
+		}
+		
+		&:hover
+		{
+			background-color: $white;
+			color: $black;
+		}
+		
+		&.active
+		{
+			color: $white;
+			background-color: $blue;
+			
+			@include shadow( $inset: true, $blur: 10px, $spread: 0px, $color: #000 );
+		}
+	}
+}
+
+.admin__top-nav
+{
+	display: inline-flex;
+	position: fixed;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	z-index: 1;
+	
+	width: 100%;
+	height: 3.5rem;
+	
+	color: $black;
+	background-color: #f0f0f0;
+	
+	@include shadow( $spread: 0px );
+	
+	a, p
+	{
+		height: 100%;
+		padding: 1rem;
+		text-decoration: none;
+		color: $black;
+		
+		svg
+		{
+			margin-right: .25rem;
+		}
+	}
+	
+	a:hover
+	{
+		color: $white;
+		background-color: $black;
+	}
+	
+	p
+	{
+		user-select: none;
+		color: $white;
+		background-color: $blue;
+	}
+}
+	
+.admin__logo
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	width: 100%;
+	height: 3.5rem;
+	
+	border-bottom: 1px solid $grey;
+	
+	svg
+	{
+		width: 70%;
+		height: auto;
+	}
+}
+
+.admin__page-wrapper
+{
+	display: block;
+	min-height: calc( 100vh + 1px );
+	padding: 6.5rem 3.5rem 3.5rem 15rem;
+	
+	font-family: 'Open Sans', sans-serif, arial;
+	font-weight: 600;
+	font-size: 0.9rem;
+	
+	text-align: center;
+	
+	color: $black;
+	background-color: #fff;
+	
+	
+	h2
+	{
+		font-size: 5rem;
+		user-select: none;
+		margin-bottom: 2rem;
+	}
+	
+	a
+	{
+		text-decoration: none;
+		font-weight: 600;
+		color: #0c6dbd;
+	}
+}
+
+.admin__page-panel
+{
+	display: block;
+	padding: 1rem;
+	padding-bottom: .65rem;
+	background-color: #f0f0f0;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	border-radius: .5rem;
+	
+	@include shadow( $blur: 15px, $spread: -5px, $trans: 0.5 );
+	
+	.loading-spinner
+	{
+		margin-top: 10vh;
+		margin-bottom: 10vh;
+		
+		filter: none;
+		
+		@include margin-x( );
+	}
+}
+
+.admin__page-panel--search
+{
+	position: relative;
+	height: 2.5rem;
+	text-align: left;
+	font-size: 1.25rem;
+	
+	input
+	{
+		width: 25rem;
+		height: 100%;
+		padding-left: 2.5rem;
+		
+		border: 1px solid #ccc;
+		border-radius: .5rem;
+		
+		&:focus
+		{
+			outline: none;
+			
+			@include shadow( $blur: 5px, $spread: 0px );
+		}
+	}
+	
+	svg
+	{
+		position: absolute;
+		top: 10px;
+		left: 25px;
+		color: $light-grey;
+	}
+}
+
+.admin__page-panel--action
+{
+	text-align: right;
+	
+	button
+	{
+		padding: .25rem 1rem;
+		
+		font-size: 1.25rem;
+		font-weight: 700;
+		
+		color: $white;
+		background-color: $green;
+		
+		border: 1px solid $green;
+		border-radius: 2px;
+		
+		&:focus
+		{
+			outline: none;
+		}
+		
+		&:hover
+		{
+			border-color: lighten( $green, 5% );
+			background-color: lighten( $green, 5% );
+		}
+		
+		svg
+		{
+			margin-right: .25rem;
+		}
+	}
+}
+
+.admin__page-panel--list
+{
+	margin: 2rem 0;
+}
+
+.admin__list-item
+{
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+	
+	padding: .5rem 1rem;
+	margin-top: .5rem;
+	
+	font-size: 1.15rem;
+	font-weight: 700;
+	
+	border: 1px solid #ddd;
+	border-radius: .5rem;
+	
+	@include shadow( $blur: 7px, $spread: -2px );
+	
+	.admin__list-item--title { width: 40%; text-align: left; }
+	.admin__list-item--price { width: 20%; }
+	.admin__list-item--stock { width: 15%; }
+	
+	.admin__list-buttons
+	{
+		width: 25%;
+		text-align: right;
+	}
+	
+	p
+	{
+		margin: 0;
+	}
+	
+	button
+	{
+		padding: .25rem .5rem;
+		margin-left: 1rem;
+		
+		font-size: 1rem;
+		font-weight: 700;
+		
+		color: $white;
+		
+		&:focus
+		{
+			outline: none;
+		}
+		
+		svg
+		{
+			margin-right: .25rem;
+		}
+	}
+	
+	.admin__edit-button
+	{
+		background-color: #d18945;
+		
+		border: 1px solid #d18945;
+		border-radius: 2px;
+	
+		&:hover
+		{
+			border: 1px solid #eeae72;
+			background-color: #eeae72;
+		}
+	}
+	
+	.admin__delete-button
+	{
+		background-color: #992d2d;
+		
+		border: 1px solid #992d2d;
+		border-radius: 2px;
+	
+		&:hover
+		{
+			border: 1px solid #c94040;
+			background-color: #c94040;
+		}
+	}
+	
+	&.admin__list-header
+	{
+		user-select: none;
+		color: $white;
+		background-color: $grey;
+		border-color: $grey;
+	}
+}
+
+.admin__page-panel--limit
+{
+	text-align: left;
+}
+
+.admin__limit
+{
+	display: inline-block;
+	margin-right: auto;
+	
+	overflow: hidden;
+	
+	color: $grey;
+	background-color: $white;
+	
+	border: 1px solid #ccc;
+	border-radius: 1rem;
+	
+	@include shadow( $blur: 10px, $spread: 0 );
+	
+	button
+	{
+		width: 3rem;
+		
+		font-size: 1.25rem;
+		font-weight: 700;
+		
+		border: none;
+		
+		&:focus
+		{
+			outline: none;
+		}
+		
+		&:hover, &.active
+		{
+			color: $white;
+			background-color: $blue;
+		}
+	}
+}
+
+.admin__page-panel--pagination
+{
+	text-align: right;
+}
+
+.admin__pagination
+{
+	display: inline-block;
+	margin-right: auto;
+	
+	color: $grey;
+	background-color: $white;
+	
+	border: 1px solid #ccc;
+	
+	@include shadow( $blur: 10px, $spread: -2px );
+	
+	button
+	{
+		padding: .15rem 1rem;
+		font-size: 1.1rem;
+		font-weight: 700;
+		border: none;
+		border-right: 1px solid $white;
+		
+		&:focus
+		{
+			outline: none;
+		}
+		
+		&:hover:enabled, &.current
+		{
+			color: $white;
+			background-color: $blue;
+		}
+	}
+}
+
+.admin__page-panel--no-results
+{
+	margin: 5rem 0;
+	
+	div
+	{
+		display: inline-block;
+		padding: 1rem 2rem;
+		
+		color: #fff;
+		background-color: #d69d53;
+		
+		border: 1px solid #d69d53;
+		border-radius: .5rem;
+		
+		@include shadow( $spread: 0 );
+	}
+	
+	h2
+	{
+		font-size: 2.25rem;
+		font-weight: 600;
+		
+		margin-bottom: 1rem;
+	}
+	
+	p
+	{
+		font-size: 1.25rem;
+	}
+}
+
+.admin__detail-form
+{
+	text-align: left;
+}
+
+.admin__detail-header
+{
+	margin: -1rem;
+	margin-bottom: 2rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid #ccc;
+	
+	@include shadow( );
+}
+
+.admin__detail-footer
+{
+	margin: -1rem;
+	margin-top: 2rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid #ccc;
+	
+	@include shadow( );
+}
+
+.admin__detail-button
+{
+	text-align: right;
+	
+	button
+	{
+		padding: .25rem 1rem;
+		
+		font-size: 1.25rem;
+		font-weight: 700;
+		
+		color: $white;
+		
+		border: 1px solid transparent;
+		border-radius: 2px;
+		
+		&:focus
+		{
+			outline: none;
+		}
+		
+		&:hover
+		{
+			color: $white;
+			background-color: $blue;
+			border-color: $blue;
+		}
+		
+		svg
+		{
+			margin-right: .25rem;
+		}
+	}
+	
+	&.admin__detail-reset
+	{
+		text-align: right;
+		
+		button
+		{
+			background-color: #c03e3e;
+			border-color: #c03e3e;
+			
+			&:hover
+			{
+				background-color: #ce4c4c;
+				border-color: #ce4c4c;
+			}
+		}
+	}
+	
+	&.admin__detail-back
+	{
+		text-align: left;
+		
+		button
+		{
+			background-color: #6f67bd;
+			border-color: #6f67bd;
+			
+			&:hover
+			{
+				background-color: #837adb;
+				border-color: #837adb;
+			}
+		}
+	}
+	
+	&.admin__detail-confirm
+	{
+		text-align: right;
+		margin-bottom: .25rem;
+		
+		button
+		{
+			background-color: #51ad44;
+			border-color: #51ad44;
+			
+			&:hover
+			{
+				background-color: #6cb363;
+				border-color: #6cb363;
+			}
+		}
+	}
+}
+
+.admin__product-categories
+{
+	margin-top: 1rem;
+	
+	p
+	{
+		text-align: left;
+		margin: 0;
+		margin-bottom: .5rem;
+	}
+	
+	select
+	{
+		width: 100%;
+		height: 10rem;
+		border: 1px solid #ccc;
+		
+		&:focus
+		{
+			outline: none;
+		}
+	}
+}
+
+.admin__product-media
+{
+	margin-top: 2rem;
+	
+	p
+	{
+		text-align: left;
+		margin: 0;
+		margin-bottom: .5rem;
+	}
+}
+
+.admin__product-media--form
+{
+	select
+	{
+		margin: 0 !important;
+	}
+	
+	label
+	{
+		text-align: left;
+	}
+}
+
+.admin__product-media--form__submit
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	color: #fff;
+	background-color: $blue;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+.admin__product-media--form__submit:focus
+{
+	outline: none;
+	border: 1px solid $white;
+}
+
+.admin__product-media--form__submit:hover
+{
+	border-color: lighten( $blue, 10% );
+	background-color: lighten( $blue, 10% );
+}
+
+.admin__product-media--error
+{
+	width: 100%;
+	margin-top: 0;
+	padding: 0.5rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif, arial;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+	background-color: #dd4545;
+}
+
+.admin__product-media--frames
+{
+	display: flex;
+	flex-flow: row nowrap;
+	height: 9rem;
+	padding: .5rem;
+	overflow-x: scroll;
+	border: 1px solid #ccc;
+}
+
+.admin__product-keys
+{
+	margin-top: 1rem;
+}

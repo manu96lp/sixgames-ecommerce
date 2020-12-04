@@ -1,0 +1,3424 @@
+/* =================================================================================
+* 		[ Carga de Productos ]
+* ================================================================================= */
+
+const Product = [
+	{
+		name: 'I Am Dead',
+		description: `Un fascinante juego de puzles y aventuras, obra de los creadores de Hohokum y Wilmot's Warehouse, en el que tendrás que explorar la vida después de la muerte y la isla de Shelmerston`,
+		price: 3.99,
+		stock: 100,
+		developer: 'Hollow Ponds',
+		publisher: 'Annapurna Interactive',
+		publishDate: '10-08-2020'
+	},
+	{
+		name: 'MAFIA: Definitive Edition',
+		description: `Tras un inesperado percance con la mafia, el taxista Tommy Angelo entra a regañadientes en el mundo del crimen organizado. A pesar de su reticencia inicial, las ventajas de unirse a la familia Salieri son demasiadas como para ignorarlas.`,
+		price: 38.99,
+		stock: 100,
+		developer: 'Hangar 13',
+		publisher: '2K',
+		publishDate: '09-24-2020'
+	},
+	{
+		name: 'Rocket League',
+		description: `Combina el fútbol de estilo arcade con el caos a cuatro ruedas, unos controles fáciles y una competición fluida y basada en la física.`,
+		price: 4.99,
+		stock: 100,
+		developer: 'Psyonix LLC',
+		publisher: 'Psyonix LLC',
+		publishDate: '07-07-2015'
+	},
+	{
+		name: 'PLAYERUNKNOWN\'S BATTLEGROUNDS',
+		description: `Un shooter basado en el modo Battle Royale. Comenzando de la nada, los jugadores tendran que luchar uno contra el otro para localizar armas y suministros para ser el único sobreviviente.`,
+		price: 29.99,
+		stock: 100,
+		developer: 'PUBG Corporation',
+		publisher: 'PUBG Corporation',
+		publishDate: '12-21-2017'
+	},
+	{
+		name: 'Sea of Thieves',
+		description: `Vivirás la experiencia esencial de la vida como pirata, desde navegar y pelear, hasta explorar y saquear: todo lo que necesitas para sentirte como todo un pirata y convertirte en una leyenda por derecho propio.`,
+		price: 39.99,
+		stock: 100,
+		developer: 'Rate Ltd',
+		publisher: 'Xbox Game Studios',
+		publishDate: '06-03-2020'
+	},
+	{
+		name: 'Star Wars: Squadrons',
+		description: `Domina el arte del combate con cazas estelares en la experiencia auténtica de pilotaje de STAR WARS™: Squadrons. Abróchate el cinturón y siente la adrenalina de los combates espaciales en primera persona junto a tu escuadrón.`,
+		price: 39.99,
+		stock: 100,
+		developer: 'Motive Studios',
+		publisher: 'Electronic Arts',
+		publishDate: '10-02-2020'
+	},
+	{
+		name: 'The Witcher III: Wild Hunt',
+		description: `Mientras la guerra hace estragos en los reinos del norte, acepta el contrato más importante de tu vida: encontrar a la niña de la profecía, un arma viviente capaz de alterar el mundo tal y como lo conocemos.`,
+		price: 19.96,
+		stock: 100,
+		developer: 'CD PROJEKT RED',
+		publisher: 'CD PROJEKT S.A.',
+		publishDate: '05-18-2015'
+	},
+	{
+		name: 'Grand Theft Auto V',
+		description: `Un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se meten en un lío, y tendrán que llevar a cabo una serie de peligrosos golpes para sobrevivir en una ciudad en la que no pueden confiar en nadie, y mucho menos los unos en los otros.`,
+		price: 10.99,
+		stock: 100,
+		developer: 'Rockstar Games',
+		publisher: 'Rockstar Games',
+		publishDate: '09-17-2013'
+	},
+	{
+		name: 'Civilization VI',
+		description: `Civilization VI ofrece nuevas maneras de interactuar con tu mundo, expandir tu imperio a través del mapa, fomentar el progreso de tu cultura y competir contra los líderes más importantes de la historia para crear una civilización que resista el paso del tiempo.`,
+		price: 7.99,
+		stock: 100,
+		developer: 'Firaxis Games',
+		publisher: '2K',
+		publishDate: '10-21-2016'
+	},
+	{
+		name: 'GRIP: Combat Racing',
+		description: `GRIP es un juego de carreras de combate a tope de alto octanaje donde irás armado hasta los dientes con armamento pesado y competirás a una velocidad atroz.`,
+		price: 6.0,
+		stock: 100,
+		developer: 'Caged Element Inc.',
+		publisher: 'Wired Productions',
+		publishDate: '11-06-2018'
+	},
+	{
+		name: 'Assassin\'s Creed Rogue',
+		description: `Presentamos Assassin's Creed Rogue, el capítulo más oscuro de la franquicia de Assassin's Creed hasta la fecha. Como Shay, vivirás la lenta transformación de Asesino a cazador de Asesinos.`,
+		price: 16.08,
+		stock: 100,
+		developer: 'Ubisoft',
+		publisher: 'Ubisoft',
+		publishDate: '11-11-2014'
+	},
+	{
+		name: 'Borderlands 2',
+		description: `Es hora de partirle la cara a Jack el Guapo. Reúne a tus amigos y corre desbocado a través del mundo recogiendo infinidad de botines y armas en un esfuerzo por salvar Pandora de las sucias garras de la Corporación Hyperion.`,
+		price: 15.99,
+		stock: 100,
+		developer: 'Gearbox Software',
+		publisher: '2K',
+		publishDate: '09-18-2012'
+	},
+	{
+		name: 'Primordials of Amyrion',
+		description: `Primordials of Amyrion es un juego de estrategia 1 vs. 1 en el que los jugadores dirigen reinos y forman ejércitos para ir a la guerra y aumentar su poder e influencia.`,
+		price: 2.99,
+		stock: 100,
+		developer: 'GLOBAL DODO ENTERTAINMENT d.o.o.',
+		publisher: 'WIREGAMES d.o.o.',
+		publishDate: '10-06-2020'
+	},
+	{
+		name: 'Raft',
+		description: `Raft te lanza a ti y a tus amigos a una aventura oceánica épica. Solo o juntos, los jugadores luchan por sobrevivir a un peligroso viaje a través de un vasto mar.`,
+		price: 13.39,
+		stock: 100,
+		developer: 'Redbeet Interactive',
+		publisher: 'Axolot Games',
+		publishDate: '05-23-2018'
+	},
+	{
+		name: 'Titanfall 2: Ultimate Edition',
+		description: `En el corazón de la Frontera, piloto y titán deben colaborar para sobrevivir en una batalla desigual. ¡Pide el despliegue de tu titán y prepárate para un frenético shooter en primera persona con Titanfall™ 2! La secuela te trae una nueva campaña de Un jugador que explora el vínculo entre piloto y titán.`,
+		price: 19.99,
+		stock: 100,
+		developer: 'Respawn Entertainment',
+		publisher: 'Electronic Arts',
+		publishDate: '10-28-2016'
+	},
+	{
+		name: 'Fall Guys: Ultimate Knockout',
+		description: `Un juego con hasta 60 jugadores de enfrentamiento todos contra todos que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor.`,
+		price: 19.99,
+		stock: 100,
+		developer: 'Mediatonic',
+		publisher: 'Developer Digital',
+		publishDate: '06-04-2020'
+	},
+	{
+		name: 'Phasmophobia',
+		description: `Un juego de horror cooperativo en línea. La actividad paranormal va en aumento y depende de ti y de tu equipo utilizar todo el equipo de caza de fantasmas a tu disposición para reunir la mayor cantidad de evidencia posible.`,
+		price: 13.99,
+		stock: 100,
+		developer: 'Kinetic Games',
+		publisher: 'Kinetic Games',
+		publishDate: '09-18-2020'
+	},
+	{
+		name: 'Among Us',
+		description: `Un juego multijugador tanto en línea como local de donde deberás trabajar en equipo para descubrir a los impostores... ¡en el espacio!`,
+		price: 4.99,
+		stock: 100,
+		developer: 'Innersloth',
+		publisher: 'Innersloth',
+		publishDate: '11-16-2018'
+	},
+	{
+		name: 'Worms W.M.D',
+		description: `Gracias a su precioso aspecto 2D dibujado a mano, nuevas armas, la nueva función de fabricación, vehículos y edificios, además del regreso de queridas armas y mecánicas de juego clásicas, Worms W.M.D es la mejor experiencia de Worms jamás vista.`,
+		price: 7.49,
+		stock: 100,
+		developer: 'Team17 Digital Ltd',
+		publisher: 'Team17 Digital Ltd',
+		publishDate: '08-23-2016'
+	},
+	{
+		name: 'Rust',
+		description: `El único objetivo en Rust es sobrevivir: superar luchas como el hambre, la sed y el frío, construir un refugio y... protegerte de otros jugadores!`,
+		price: 39.99,
+		stock: 100,
+		developer: 'Facepunch Studios',
+		publisher: 'Facepunch Studios',
+		publishDate: '02-08-2018'
+	}
+];
+
+/* =================================================================================
+* 		[ Carga de Categorías ]
+* ================================================================================= */
+
+const Category = [
+	{
+		name: 'Acción',
+		description: 'Pon a prueba tu velocidad, destreza y tiempo de reacción.'
+	},
+	{
+		name: 'Aventura',
+		description: 'Investiga, explora, soluciona problemas, etc.'
+	},
+	{
+		name: 'Carreras',
+		description: 'Súbete a tu vehículo y compite en una pista de carreras a máxima velocidad.'
+	},
+	{
+		name: 'Colorido',
+		description: 'Colorido y amigable para todas las edades.'
+	},
+	{
+		name: 'Competitivo',
+		description: 'Compite contra otros jugadores para ganar.'
+	},
+	{
+		name: 'Cooperativo',
+		description: 'Colabora con otros jugadores para ganar.'
+	},
+	{
+		name: 'Disparos',
+		description: 'Mata a tus enemigos llenándolos de plomo.'
+	},
+	{
+		name: 'Divertido',
+		description: 'Soltarás mas de una caracajada cuando estés jugando.'
+	},
+	{
+		name: 'Estrategia',
+		description: 'Perfecto para demostrar tu inteligencia y habilidades de planificación.'
+	},
+	{
+		name: 'Indie',
+		description: 'Innovadores juegos de manos de pequeños grupos de desarrolladores.'
+	},
+	{
+		name: 'Multijugador',
+		description: 'Vive una experiencia increíble compartiendo con otros jugadores.'
+	},
+	{
+		name: 'Mundo abierto',
+		description: 'Disfruta de todo un mundo para explorar e interactuar'
+	},
+	{
+		name: 'Parkour',
+		description: 'Disfruta de saltar y realizar acrobacias sin igual.'
+	},
+	{
+		name: 'Por turnos',
+		description: 'Pon aprueba tu análisis y tu capacidad para resolver problemas.'
+	},
+	{
+		name: 'Primera persona',
+		description: 'Puedes visualizar el juego en modo primera persona.'
+	},
+	{
+		name: 'Rol',
+		description: 'Desempeña un rol.'
+	},
+	{
+		name: 'Supervivencia',
+		description: 'Lucha para sobrevivir en un ambiente hostil y lleno de desafíos.'
+	},
+	{
+		name: 'Tercera persona',
+		description: 'Puedes visualizar el juego en modo tercera persona.'
+	},
+	{
+		name: 'Terror',
+		description: 'Prepárate para llevarte unos buenos sustos.'
+	},
+	{
+		name: 'Un jugador',
+		description: 'No habrá nadie que te pueda molestar.'
+	}
+];
+
+/* =================================================================================
+* 		[ Carga de Media ( Imágenes/Archivos ) ]
+* ================================================================================= */
+
+const Media = [
+	/*
+		I Am Dead
+	*/
+	{
+		type: 'portrait',
+		path: 'f832b2d6bfd7354555b62010e4b0787b.jpg',
+		productId: 1
+	},
+	{
+		type: 'video-small',
+		path: 'd1cfd667d87bf42fee7b4730d89f6d98.webm',
+		productId: 1
+	},
+	{
+		type: 'video-big',
+		path: '639c2caa8bbe737878bfc9db070da818.webm',
+		productId: 1
+	},
+	{
+		type: 'image-small',
+		path: 'c5440ed31702154a7581fb17b7b34da0.jpg',
+		productId: 1
+	},
+	{
+		type: 'image-big',
+		path: 'd1f35615d213806cc79d52379f8a7fbc.jpg',
+		productId: 1
+	},
+	{
+		type: 'image-small',
+		path: '15b82a76c3726338a835ae4bc4188fd1.jpg',
+		productId: 1
+	},
+	{
+		type: 'image-big',
+		path: '1e22e5af17b0c476152b280b44065a8c.jpg',
+		productId: 1
+	},
+	{
+		type: 'image-small',
+		path: '6bcdc44c8d6099bd583cc077255f17a7.jpg',
+		productId: 1
+	},
+	{
+		type: 'image-big',
+		path: 'a9984673292011dc3450053978e95962.jpg',
+		productId: 1
+	},
+	{
+		type: 'carousel',
+		path: 'iad-carousel.jpg',
+		productId: 1
+	},
+	{
+		type: 'home',
+		path: 'iad-home.jpg',
+		productId: 1
+	},
+
+	/*
+		MAFIA
+	*/
+	{
+		type: 'portrait',
+		path: 'ffbe1264e47c9394329351da2e231b8e.jpg',
+		productId: 2
+	},
+	{
+		type: 'video-small',
+		path: '0cb83aec3fb2b6a9396b536c49706112.webm',
+		productId: 2
+	},
+	{
+		type: 'video-big',
+		path: '70dc3412744db60ea3a2b0e8bfe6707f.webm',
+		productId: 2
+	},
+	{
+		type: 'image-small',
+		path: 'e6607a77bb69b924a09042cdd732b232.jpg',
+		productId: 2
+	},
+	{
+		type: 'image-big',
+		path: '58ad1b7789a2f8fab0084ad6cef6b2f7.jpg',
+		productId: 2
+	},
+	{
+		type: 'image-small',
+		path: '9f08eb141d0bd3fbc95335cb096263ec.jpg',
+		productId: 2
+	},
+	{
+		type: 'image-big',
+		path: '5aed1da19d25b757411a1958c7843d81.jpg',
+		productId: 2
+	},
+	{
+		type: 'image-small',
+		path: 'f73d8372d6dd3bf710b3d0a97f5860fe.jpg',
+		productId: 2
+	},
+	{
+		type: 'image-big',
+		path: '30f0e8ae45453591b5382e63fb981b83.jpg',
+		productId: 2
+	},
+	{
+		type: 'carousel',
+		path: 'mde-carousel.jpg',
+		productId: 2
+	},
+	{
+		type: 'home',
+		path: 'mde-home.jpg',
+		productId: 2
+	},
+
+	/*
+		Rocket League
+	*/
+	{
+		type: 'portrait',
+		path: 'ab9db99a6fd0856e014085625390fdcc.jpg',
+		productId: 3
+	},
+	{
+		type: 'video-small',
+		path: '1095e6749093597871d5ae11998cf3d8.webm',
+		productId: 3
+	},
+	{
+		type: 'video-big',
+		path: 'e08cbd0f8a5f4ac3c54a506c7e519d63.webm',
+		productId: 3
+	},
+	{
+		type: 'image-small',
+		path: '814f6d07be2e356b069f28fc8680b423.jpg',
+		productId: 3
+	},
+	{
+		type: 'image-big',
+		path: '2d92c6a0949c901e49e625f8365ecda5.jpg',
+		productId: 3
+	},
+	{
+		type: 'image-small',
+		path: 'dda8cec12f49b21e8373ade0b8f57172.jpg',
+		productId: 3
+	},
+	{
+		type: 'image-big',
+		path: '029dc3fa0b98cad55ab2a9bc36be5c0a.jpg',
+		productId: 3
+	},
+	{
+		type: 'image-small',
+		path: '9a901226cd38853227d5a3fae4cadfd7.jpg',
+		productId: 3
+	},
+	{
+		type: 'image-big',
+		path: '904ff520dfdf821ba0d03687f136538f.jpg',
+		productId: 3
+	},
+	{
+		type: 'carousel',
+		path: 'rl-carousel.jpg',
+		productId: 3
+	},
+	{
+		type: 'home',
+		path: 'rl-home.jpg',
+		productId: 3
+	},
+
+	/*
+		PUBG
+	*/
+	{
+		type: 'portrait',
+		path: 'e5c1f922c2d178d5944b565b5eface8c.jpg',
+		productId: 4
+	},
+	{
+		type: 'video-small',
+		path: '6d9d402e29a2f5bc005df7ee41ecdb05.webm',
+		productId: 4
+	},
+	{
+		type: 'video-big',
+		path: '6ca38ddf8de0ad86c6354b728ed9a4c7.webm',
+		productId: 4
+	},
+	{
+		type: 'image-small',
+		path: '4c0cda85f977a57631c40b39f85bcfe4.jpg',
+		productId: 4
+	},
+	{
+		type: 'image-big',
+		path: '238af00d1c6e5e16dd6245ab32a32f8d.jpg',
+		productId: 4
+	},
+	{
+		type: 'image-small',
+		path: '820c7724a3065b8bf8ba3d271bfe4fd0.jpg',
+		productId: 4
+	},
+	{
+		type: 'image-big',
+		path: '396c8d817fabf639bb460b2eec4dfc4c.jpg',
+		productId: 4
+	},
+	{
+		type: 'image-small',
+		path: 'bbd376bce98ed8a869a36644cf32ffd3.jpg',
+		productId: 4
+	},
+	{
+		type: 'image-big',
+		path: '04d180c08830ff5bd8caf96628504509.jpg',
+		productId: 4
+	},
+	{
+		type: 'carousel',
+		path: 'pugb-carousel.jpg',
+		productId: 4
+	},
+	{
+		type: 'home',
+		path: 'pugb-home.jpg',
+		productId: 4
+	},
+
+	/*
+		Sea of Thieves
+	*/
+	{
+		type: 'portrait',
+		path: '9923b4996ba244750ca9f59c55636b96.jpg',
+		productId: 5
+	},
+	{
+		type: 'video-small',
+		path: '7626f0aa452ccd50da1a1f06c9f8aac9.webm',
+		productId: 5
+	},
+	{
+		type: 'video-big',
+		path: '7ff1273b600f86ead1da51d04960147f.webm',
+		productId: 5
+	},
+	{
+		type: 'image-small',
+		path: '37175cca0e3ae1ec809351e151ab7f39.jpg',
+		productId: 5
+	},
+	{
+		type: 'image-big',
+		path: 'b6a10c6fdfc9fac7d4ee6b9b3bfa2f51.jpg',
+		productId: 5
+	},
+	{
+		type: 'image-small',
+		path: 'f3ca5f8c236366a6d4f9551ffcc3cba2.jpg',
+		productId: 5
+	},
+	{
+		type: 'image-big',
+		path: '8e2500672051821c1ba019f77ef223ab.jpg',
+		productId: 5
+	},
+	{
+		type: 'image-small',
+		path: '35364f2f971dc81cc8df72c7ec0393fd.jpg',
+		productId: 5
+	},
+	{
+		type: 'image-big',
+		path: '0e8c1bd759f21b0ece10fa2dda985e5f.jpg',
+		productId: 5
+	},
+	{
+		type: 'carousel',
+		path: 'sot-carousel.jpg',
+		productId: 5
+	},
+	{
+		type: 'home',
+		path: 'sot-home.jpg',
+		productId: 5
+	},
+
+	/*
+		Star Wars
+	*/
+	{
+		type: 'portrait',
+		path: 'ce374fa7e4a70ffefa319b5191061c4d.jpg',
+		productId: 6
+	},
+	{
+		type: 'video-small',
+		path: '8d0db2590cf849f7c68ec997d0ad815a.webm',
+		productId: 6
+	},
+	{
+		type: 'video-big',
+		path: '424937271770bc4e3702e41667307052.webm',
+		productId: 6
+	},
+	{
+		type: 'image-small',
+		path: '431047b1de56abafce7cb29e4fd6a53a.jpg',
+		productId: 6
+	},
+	{
+		type: 'image-big',
+		path: '68dce62c9d653294d32a383ba90a6ce7.jpg',
+		productId: 6
+	},
+	{
+		type: 'image-small',
+		path: 'bebac5de245f7711f6d7b5331930fadf.jpg',
+		productId: 6
+	},
+	{
+		type: 'image-big',
+		path: '7018e94be5affd6cb7a04fcba23f06d6.jpg',
+		productId: 6
+	},
+	{
+		type: 'image-small',
+		path: 'c030b99c6b819a2eb8263ef4cd0df9e7.jpg',
+		productId: 6
+	},
+	{
+		type: 'image-big',
+		path: '6ba9036a9463927903d12c4732ee4dd4.jpg',
+		productId: 6
+	},
+	{
+		type: 'carousel',
+		path: 'sws-carousel.png',
+		productId: 6
+	},
+	{
+		type: 'home',
+		path: 'sws-home.jpg',
+		productId: 6
+	},
+
+	/*
+		The Witcher III
+	*/
+	{
+		type: 'portrait',
+		path: '7256ce583f288a1f6c93243f335e0a41.jpg',
+		productId: 7
+	},
+	{
+		type: 'video-small',
+		path: 'effd0b7f4f2f58556353a218a4c4c359.webm',
+		productId: 7
+	},
+	{
+		type: 'video-big',
+		path: 'f52f3d49f85243b87c369cc281997bf4.webm',
+		productId: 7
+	},
+	{
+		type: 'image-small',
+		path: '885b1ce7af3a03865d4dc2e2e149db32.jpg',
+		productId: 7
+	},
+	{
+		type: 'image-big',
+		path: '6288d52c21248bbae150075f07e76b10.jpg',
+		productId: 7
+	},
+	{
+		type: 'image-small',
+		path: '4ab4bd388deff744b48ae0e99dbf4404.jpg',
+		productId: 7
+	},
+	{
+		type: 'image-big',
+		path: '558b01ab255eef3d600faafb4c74a9ce.jpg',
+		productId: 7
+	},
+	{
+		type: 'image-small',
+		path: 'a9e6f7081e103a22a3a5e5e062a9f225.jpg',
+		productId: 7
+	},
+	{
+		type: 'image-big',
+		path: '63214b2b114edadc128dfd3ff0344ce8.jpg',
+		productId: 7
+	},
+	{
+		type: 'carousel',
+		path: 'tw3-carousel.jpg',
+		productId: 7
+	},
+	{
+		type: 'home',
+		path: 'tw3-home.jpg',
+		productId: 7
+	},
+
+	/*
+		GTA V
+	*/
+	{
+		type: 'portrait',
+		path: '3ddadeafa9c1039258d433e6a002da5b.jpg',
+		productId: 8
+	},
+	{
+		type: 'video-small',
+		path: 'dfb5607e17272e43718dc2958bfe52b0.webm',
+		productId: 8
+	},
+	{
+		type: 'video-big',
+		path: '4f0f6fa23e50342fbd1c234063020dc4.webm',
+		productId: 8
+	},
+	{
+		type: 'image-small',
+		path: 'c616cb657f386dc9c32f6790b43e809c.jpg',
+		productId: 8
+	},
+	{
+		type: 'image-big',
+		path: '40c7f1c1972eaaee521f034207821acb.jpg',
+		productId: 8
+	},
+	{
+		type: 'image-small',
+		path: '57baee5110b93622a79461c436f180f3.jpg',
+		productId: 8
+	},
+	{
+		type: 'image-big',
+		path: '1290aa3001822f4d5eec43c6174ff8d9.jpg',
+		productId: 8
+	},
+	{
+		type: 'image-small',
+		path: '21dfd3b3861b8191e520d200f5062749.jpg',
+		productId: 8
+	},
+	{
+		type: 'image-big',
+		path: '60ba3a7b364399caf1869ff3b2e1c480.jpg',
+		productId: 8
+	},
+	{
+		type: 'carousel',
+		path: 'gtav-carousel.jpg',
+		productId: 8
+	},
+	{
+		type: 'home',
+		path: 'gtav-home.png',
+		productId: 8
+	},
+
+	/*
+		Civilization VI
+	*/
+	{
+		type: 'portrait',
+		path: '7880768f979175387a112033a823390c.jpg',
+		productId: 9
+	},
+	{
+		type: 'video-small',
+		path: '21a6716a8ad70db714ddcc0128e8edad.webm',
+		productId: 9
+	},
+	{
+		type: 'video-big',
+		path: 'e7fbdddce76909cc757e57310043d60c.webm',
+		productId: 9
+	},
+	{
+		type: 'image-small',
+		path: '87fa46a1e6f96171f1509df65745997d.jpg',
+		productId: 9
+	},
+	{
+		type: 'image-big',
+		path: 'abbdadfd8dd3df63bdf6451eb0db129a.jpg',
+		productId: 9
+	},
+	{
+		type: 'image-small',
+		path: 'c5cbaa8914ae248a93a4f965de9795ee.jpg',
+		productId: 9
+	},
+	{
+		type: 'image-big',
+		path: 'cb3b6ba704dbc498dbbc6090992b2e67.jpg',
+		productId: 9
+	},
+	{
+		type: 'image-small',
+		path: 'cee21e66555595213f7816ef8b161882.jpg',
+		productId: 9
+	},
+	{
+		type: 'image-big',
+		path: '228362402849bc383cb38e59b8c037e1.jpg',
+		productId: 9
+	},
+	{
+		type: 'carousel',
+		path: 'c4-carousel.jpg',
+		productId: 9
+	},
+	{
+		type: 'home',
+		path: 'c4-home.jpg',
+		productId: 9
+	},
+
+	/*
+		GRIP
+	*/
+	{
+		type: 'portrait',
+		path: '7b164533304af1adc854dd16a45a9fd7.jpg',
+		productId: 10
+	},
+	{
+		type: 'video-small',
+		path: '1199d289827b6ad236162f4e94127600.webm',
+		productId: 10
+	},
+	{
+		type: 'video-big',
+		path: 'b81d01ba47b9896e2a871726af83a5e6.webm',
+		productId: 10
+	},
+	{
+		type: 'image-small',
+		path: '7dcb40c2415c428c94ccb56b754d0fbf.jpg',
+		productId: 10
+	},
+	{
+		type: 'image-big',
+		path: '0ad3136d8385151fbf2b104d0391dfea.jpg',
+		productId: 10
+	},
+	{
+		type: 'image-small',
+		path: 'afe36dc1fb22c2043f98894d98d9c4e7.jpg',
+		productId: 10
+	},
+	{
+		type: 'image-big',
+		path: 'efdb2e7753e53bde9a64b1af32b1fef4.jpg',
+		productId: 10
+	},
+	{
+		type: 'image-small',
+		path: 'cc17b679a8dcdbf96004e04cfada1b0b.jpg',
+		productId: 10
+	},
+	{
+		type: 'image-big',
+		path: '3c1bfb3fe3f402753e4defe8dd916df5.jpg',
+		productId: 10
+	},
+	{
+		type: 'carousel',
+		path: 'g2-carousel.jpg',
+		productId: 10
+	},
+	{
+		type: 'home',
+		path: 'g2-home.jpeg',
+		productId: 10
+	},
+
+	/*
+		Assassins Creed
+	*/
+	{
+		type: 'portrait',
+		path: '5c52644cb29cbdb0eddd859813d7c201.jpg',
+		productId: 11
+	},
+	{
+		type: 'video-small',
+		path: '2f1847e2004d202b6638bee865caa8a6.webm',
+		productId: 11
+	},
+	{
+		type: 'video-big',
+		path: 'cccd5c0ddc6fc8518341f65f31139a09.webm',
+		productId: 11
+	},
+	{
+		type: 'image-small',
+		path: '5528d11b5ea819579fc1acaef47f037e.jpg',
+		productId: 11
+	},
+	{
+		type: 'image-big',
+		path: '698eb95f085e94bf55299cfe6005e788.jpg',
+		productId: 11
+	},
+	{
+		type: 'image-small',
+		path: '9a9b7bfb824559412bd3c25f012bc9bb.jpg',
+		productId: 11
+	},
+	{
+		type: 'image-big',
+		path: 'b4f0901059186c736b6bdc0657f312cc.jpg',
+		productId: 11
+	},
+	{
+		type: 'image-small',
+		path: 'ff349653d06e8fb0207613a25da9d0b8.jpg',
+		productId: 11
+	},
+	{
+		type: 'image-big',
+		path: '6f8e355eca4d00697a233d182d49fd1e.jpg',
+		productId: 11
+	},
+	{
+		type: 'carousel',
+		path: 'acr-carousel.jpg',
+		productId: 11
+	},
+	{
+		type: 'home',
+		path: 'acr-home.jpg',
+		productId: 11
+	},
+
+	/*
+		Borderlands 2
+	*/
+	{
+		type: 'portrait',
+		path: 'b4fb3cbf73cfca3a112c80f6ca688fe1.jpg',
+		productId: 12
+	},
+	{
+		type: 'video-small',
+		path: '38563a68caffd93e1c7bf238733b7885.webm',
+		productId: 12
+	},
+	{
+		type: 'video-big',
+		path: '42b6ff46a509ac8148985871da9f720d.webm',
+		productId: 12
+	},
+	{
+		type: 'image-small',
+		path: 'f459884a74d9bc58a7131c1ec12d702c.jpg',
+		productId: 12
+	},
+	{
+		type: 'image-big',
+		path: '5521490b40e99b23d94affbe35a2d75c.jpg',
+		productId: 12
+	},
+	{
+		type: 'image-small',
+		path: '94461a85b3d6402e556f3a12461eee0d.jpg',
+		productId: 12
+	},
+	{
+		type: 'image-big',
+		path: '0b25864597229e4a452e07cd3f6f4712.jpg',
+		productId: 12
+	},
+	{
+		type: 'image-small',
+		path: 'be56538c77b5ae952eb92868a5710d33.jpg',
+		productId: 12
+	},
+	{
+		type: 'image-big',
+		path: '76c534da821d09d7452a1c922b93e3e0.jpg',
+		productId: 12
+	},
+	{
+		type: 'carousel',
+		path: 'b2-carousel.jpg',
+		productId: 12
+	},
+	{
+		type: 'home',
+		path: 'b2-home.jpg',
+		productId: 12
+	},
+
+	/*
+		Primordials
+	*/
+	{
+		type: 'portrait',
+		path: '2b0d72d57a1953c969d805a0428f8f7d.jpg',
+		productId: 13
+	},
+	{
+		type: 'video-small',
+		path: 'ee86f154f4864e2545db61b233e070c7.webm',
+		productId: 13
+	},
+	{
+		type: 'video-big',
+		path: '08f0fcd2eeb74a7cbba26db7171308e9.webm',
+		productId: 13
+	},
+	{
+		type: 'image-small',
+		path: '3388d7c3de75c773c5db00f71f755755.jpg',
+		productId: 13
+	},
+	{
+		type: 'image-big',
+		path: 'f6bad21ec941beffe34f64afd775c4fb.jpg',
+		productId: 13
+	},
+	{
+		type: 'image-small',
+		path: '8c8093c8c7609b9cd594f661b360b4ff.jpg',
+		productId: 13
+	},
+	{
+		type: 'image-big',
+		path: 'f00362e59cd4b45a58fb35661f79dd15.jpg',
+		productId: 13
+	},
+	{
+		type: 'image-small',
+		path: '5344ed77966070aecee489f9d00f9cee.jpg',
+		productId: 13
+	},
+	{
+		type: 'image-big',
+		path: 'b0ec745753213d41ff145eb7d8cda5ca.jpg',
+		productId: 13
+	},
+	{
+		type: 'carousel',
+		path: 'pm-carousel.png',
+		productId: 13
+	},
+	{
+		type: 'home',
+		path: 'pm-home.jpg',
+		productId: 13
+	},
+
+	/*
+		Raft
+	*/
+	{
+		type: 'portrait',
+		path: 'e33f1e6c7b7c490515d00b806485096c.jpg',
+		productId: 14
+	},
+	{
+		type: 'video-small',
+		path: '787f5e11d469706592786c372fec71e5.webm',
+		productId: 14
+	},
+	{
+		type: 'video-big',
+		path: '7e8af0d5d9e4ef022962141ae3105752.webm',
+		productId: 14
+	},
+	{
+		type: 'image-small',
+		path: '621f50971fd089f21e3e0321da97653c.jpg',
+		productId: 14
+	},
+	{
+		type: 'image-big',
+		path: '388cf828538a647847c563a8bcc988f9.jpg',
+		productId: 14
+	},
+	{
+		type: 'image-small',
+		path: '2173551f9b0f308ba3e5a9e83a5f2898.jpg',
+		productId: 14
+	},
+	{
+		type: 'image-big',
+		path: 'b9dbbce7bce1b50f081f0dad9477ee64.jpg',
+		productId: 14
+	},
+	{
+		type: 'image-small',
+		path: 'c4b5542594d20f2e1596317fbae7d7d9.jpg',
+		productId: 14
+	},
+	{
+		type: 'image-big',
+		path: '49fb5559879f22c707a7c490f8930f0a.jpg',
+		productId: 14
+	},
+	{
+		type: 'carousel',
+		path: 'raft-carousel.jpg',
+		productId: 14
+	},
+	{
+		type: 'home',
+		path: 'raft-home.jpg',
+		productId: 14
+	},
+
+	/*
+		Titanfall 2
+	*/
+	{
+		type: 'portrait',
+		path: '4cd37878ad29391b9bb8282685813841.jpg',
+		productId: 15
+	},
+	{
+		type: 'video-small',
+		path: '50064dedb531ad5541ae34d56a211b11.webm',
+		productId: 15
+	},
+	{
+		type: 'video-big',
+		path: '309b36ff538ce8faee863985ff349597.webm',
+		productId: 15
+	},
+	{
+		type: 'image-small',
+		path: 'fda04155c109dd145440f72e998ce1a4.jpg',
+		productId: 15
+	},
+	{
+		type: 'image-big',
+		path: '4e30eb6644554b8b56e36ae9037c9262.jpg',
+		productId: 15
+	},
+	{
+		type: 'image-small',
+		path: '0645bffa52272ca8fe70c4cc36f214d7.jpg',
+		productId: 15
+	},
+	{
+		type: 'image-big',
+		path: '5d4493f382ce111504f80842497da31e.jpg',
+		productId: 15
+	},
+	{
+		type: 'image-small',
+		path: '7fd61ebd4dfc5cd1f2feaddfaea2d33c.jpg',
+		productId: 15
+	},
+	{
+		type: 'image-big',
+		path: '70328664021056555dca804aca73d1fa.jpg',
+		productId: 15
+	},
+	{
+		type: 'carousel',
+		path: 'tf2-carousel.jpg',
+		productId: 15
+	},
+	{
+		type: 'home',
+		path: 'tf2-home.jpg',
+		productId: 15
+	},
+
+	/*
+		Fall Guys
+	*/
+	{
+		type: 'portrait',
+		path: '87ea08689e145db9bdd3a8137bb244d1.jpg',
+		productId: 16
+	},
+	{
+		type: 'video-small',
+		path: 'e7af0b6a5e98d6a10bd25cf3c2e9a22a.webm',
+		productId: 16
+	},
+	{
+		type: 'video-big',
+		path: '685fb0186acde387be7769afde8195dc.webm',
+		productId: 16
+	},
+	{
+		type: 'image-small',
+		path: '95fd588af3f9fb40e93cdee1f2b46d95.jpg',
+		productId: 16
+	},
+	{
+		type: 'image-big',
+		path: '6fd1e6cf7588166357b50cb97fc7ca3d.jpg',
+		productId: 16
+	},
+	{
+		type: 'image-small',
+		path: '9700387e61280b1e261aa41758771b9f.jpg',
+		productId: 16
+	},
+	{
+		type: 'image-big',
+		path: '2ecb82c2741b5482131c5ecc6ee2fb2e.jpg',
+		productId: 16
+	},
+	{
+		type: 'image-small',
+		path: 'aacd635d07cde5185ac84eec8cea3ee9.jpg',
+		productId: 16
+	},
+	{
+		type: 'image-big',
+		path: 'd06273f6afab732acf8d6c87c5695336.jpg',
+		productId: 16
+	},
+	{
+		type: 'carousel',
+		path: 'fg-carousel.jpg',
+		productId: 16
+	},
+	{
+		type: 'home',
+		path: 'fg-home.jpg',
+		productId: 16
+	},
+
+	/*
+		Phasmophobia
+	*/
+	{
+		type: 'portrait',
+		path: '61f408acd05de5de8d96742d85a913b0.jpg',
+		productId: 17
+	},
+	{
+		type: 'video-small',
+		path: 'e6e6541e7a57284af79faf07ca78b292.webm',
+		productId: 17
+	},
+	{
+		type: 'video-big',
+		path: '53e048c1f6ca1046715047f342c19de4.webm',
+		productId: 17
+	},
+	{
+		type: 'image-small',
+		path: '32e3332aa82a5be0561339be6db3e563.jpg',
+		productId: 17
+	},
+	{
+		type: 'image-big',
+		path: 'd8e5a560359545d73c36842997a5156a.jpg',
+		productId: 17
+	},
+	{
+		type: 'image-small',
+		path: '23611a6468af4707488532edb8a0e48f.jpg',
+		productId: 17
+	},
+	{
+		type: 'image-big',
+		path: '81265c8e90a82d40da8e660c8ee21d3c.jpg',
+		productId: 17
+	},
+	{
+		type: 'image-small',
+		path: '88bffee1b42f1f9ae9c4d6829adeb029.jpg',
+		productId: 17
+	},
+	{
+		type: 'image-big',
+		path: '7d825cbc0c223c35568f1484c7692533.jpg',
+		productId: 17
+	},
+	{
+		type: 'carousel',
+		path: 'p-carousel.jpg',
+		productId: 17
+	},
+	{
+		type: 'home',
+		path: 'p-home.jpg',
+		productId: 17
+	},
+
+	/*
+		Among Us
+	*/
+	{
+		type: 'portrait',
+		path: '0fbe417ccd16f432197742af8520fa63.jpg',
+		productId: 18
+	},
+	{
+		type: 'video-small',
+		path: '7ab58fd373348e6cc4b5944b69247d68.webm',
+		productId: 18
+	},
+	{
+		type: 'video-big',
+		path: '0d78c30c13307775df6b722c906e89f2.webm',
+		productId: 18
+	},
+	{
+		type: 'image-small',
+		path: '37a83cf80cb5b1006eab5be5766b7ee5.jpg',
+		productId: 18
+	},
+	{
+		type: 'image-big',
+		path: '124eee0fc5e00ee30341f48c5bb04412.jpg',
+		productId: 18
+	},
+	{
+		type: 'image-small',
+		path: 'f4bfb591236c77d33dc075796df72b32.jpg',
+		productId: 18
+	},
+	{
+		type: 'image-big',
+		path: '7202bc0cb7066323f7e613e10e399ba9.jpg',
+		productId: 18
+	},
+	{
+		type: 'image-small',
+		path: '9f766fbe8b0706669edb2fb37e8d51cf.jpg',
+		productId: 18
+	},
+	{
+		type: 'image-big',
+		path: 'e2c1d5a49a7e555df2394680421237c3.jpg',
+		productId: 18
+	},
+	{
+		type: 'carousel',
+		path: 'au-carousel.jpg',
+		productId: 18
+	},
+	{
+		type: 'home',
+		path: 'au-home.jpg',
+		productId: 18
+	},
+
+	/*
+		Worms
+	*/
+	{
+		type: 'portrait',
+		path: '759c03c3d347b31c273cbed4e5d62016.jpg',
+		productId: 19
+	},
+	{
+		type: 'video-small',
+		path: 'f107f6fd33a2b15129f127e8d7af4801.webm',
+		productId: 19
+	},
+	{
+		type: 'video-big',
+		path: '7b8a3b7c9c544ebb43c4779ffe6f0231.webm',
+		productId: 19
+	},
+	{
+		type: 'image-small',
+		path: 'b1cac7cd33d0f2d89f0cdd9ec93f5a9f.jpg',
+		productId: 19
+	},
+	{
+		type: 'image-big',
+		path: 'e3b375b90f051518510b25b159ebbe28.jpg',
+		productId: 19
+	},
+	{
+		type: 'image-small',
+		path: '9ca8b9736893eaa6ee7329c3931d5dd3.jpg',
+		productId: 19
+	},
+	{
+		type: 'image-big',
+		path: '29664349afd7450640c4b0735282b7e5.jpg',
+		productId: 19
+	},
+	{
+		type: 'image-small',
+		path: 'f15ae68baf6e17f24399bdc17557b961.jpg',
+		productId: 19
+	},
+	{
+		type: 'image-big',
+		path: '8500ee33a84041d52ad1f19b4dd2d5cd.jpg',
+		productId: 19
+	},
+	{
+		type: 'carousel',
+		path: 'ww-carousel.jpg',
+		productId: 19
+	},
+	{
+		type: 'home',
+		path: 'ww-home.jpg',
+		productId: 19
+	},
+
+	/*
+		Rust
+	*/
+	{
+		type: 'portrait',
+		path: 'a67b235fb86d870b5062f655b5b6f343.jpg',
+		productId: 20
+	},
+	{
+		type: 'video-small',
+		path: '592b30a2cfbc451f601242f4eb1aa777.webm',
+		productId: 20
+	},
+	{
+		type: 'video-big',
+		path: '54740822e824a52d7544c7818b959705.webm',
+		productId: 20
+	},
+	{
+		type: 'image-small',
+		path: 'a7156947618bff10bd68d72680013394.jpg',
+		productId: 20
+	},
+	{
+		type: 'image-big',
+		path: 'e2c599047a18ccc11db370c6ad0615db.jpg',
+		productId: 20
+	},
+	{
+		type: 'image-small',
+		path: '71755b0b1adfc01f718e89df0f9eff66.jpg',
+		productId: 20
+	},
+	{
+		type: 'image-big',
+		path: 'ab689e6039d0213f4ab45e15c14764c0.jpg',
+		productId: 20
+	},
+	{
+		type: 'image-small',
+		path: 'a058c1d43e86929a6e2a732b0ce67531.jpg',
+		productId: 20
+	},
+	{
+		type: 'image-big',
+		path: '5484a53f800d383decc36e8318b5843b.jpg',
+		productId: 20
+	},
+	{
+		type: 'carousel',
+		path: 'rust-carousel.jpg',
+		productId: 20
+	},
+	{
+		type: 'home',
+		path: 'rust-home.jpg',
+		productId: 20
+	},
+];
+
+/* =================================================================================
+* 		[ Creación de relaciones entre Productos y Categorías ]
+* ================================================================================= */
+
+const ProductCategory = [
+	/*
+		  Accion
+	*/
+	{
+		categoryId: 1,
+		productId: 2
+	},
+	{
+		categoryId: 1,
+		productId: 3
+	},
+	{
+		categoryId: 1,
+		productId: 4
+	},
+	{
+		categoryId: 1,
+		productId: 5
+	},
+	{
+		categoryId: 1,
+		productId: 6
+	},
+	{
+		categoryId: 1,
+		productId: 7
+	},
+	{
+		categoryId: 1,
+		productId: 8
+	},
+	{
+		categoryId: 1,
+		productId: 10
+	},
+	{
+		categoryId: 1,
+		productId: 11
+	},
+	{
+		categoryId: 1,
+		productId: 12
+	},
+	{
+		categoryId: 1,
+		productId: 15
+	},
+	{
+		categoryId: 1,
+		productId: 17
+	},
+	{
+		categoryId: 1,
+		productId: 19
+	},
+
+	/*
+		Aventura
+	*/
+	{
+		categoryId: 2,
+		productId: 1
+	},
+	{
+		categoryId: 2,
+		productId: 2
+	},
+	{
+		categoryId: 2,
+		productId: 5
+	},
+	{
+		categoryId: 2,
+		productId: 7
+	},
+	{
+		categoryId: 2,
+		productId: 8
+	},
+	{
+		categoryId: 2,
+		productId: 11
+	},
+	{
+		categoryId: 2,
+		productId: 12
+	},
+	{
+		categoryId: 2,
+		productId: 14
+	},
+	{
+		categoryId: 2,
+		productId: 20
+	},
+
+	/*
+		Carreras
+	*/
+	{
+		categoryId: 3,
+		productId: 3
+	},
+	{
+		categoryId: 3,
+		productId: 8
+	},
+	{
+		categoryId: 3,
+		productId: 10
+	},
+
+	/*
+		Colorido
+	*/
+	{
+		categoryId: 4,
+		productId: 16
+	},
+	{
+		categoryId: 4,
+		productId: 18
+	},
+
+	/*
+		Competitivo
+	*/
+	{
+		categoryId: 5,
+		productId: 3
+	},
+	{
+		categoryId: 5,
+		productId: 4
+	},
+	{
+		categoryId: 5,
+		productId: 6
+	},
+	{
+		categoryId: 5,
+		productId: 8
+	},
+	{
+		categoryId: 5,
+		productId: 9
+	},
+	{
+		categoryId: 5,
+		productId: 10
+	},
+	{
+		categoryId: 5,
+		productId: 16
+	},
+	{
+		categoryId: 5,
+		productId: 19
+	},
+
+	/*
+		Cooperativo
+	*/
+	{
+		categoryId: 6,
+		productId: 3
+	},
+	{
+		categoryId: 6,
+		productId: 4
+	},
+	{
+		categoryId: 6,
+		productId: 5
+	},
+	{
+		categoryId: 6,
+		productId: 6
+	},
+	{
+		categoryId: 6,
+		productId: 8
+	},
+	{
+		categoryId: 6,
+		productId: 9
+	},
+	{
+		categoryId: 6,
+		productId: 12
+	},
+	{
+		categoryId: 6,
+		productId: 16
+	},
+	{
+		categoryId: 6,
+		productId: 17
+	},
+	{
+		categoryId: 6,
+		productId: 18
+	},
+	{
+		categoryId: 6,
+		productId: 19
+	},
+	{
+		categoryId: 6,
+		productId: 20
+	},
+
+	/*
+		Disparos
+	*/
+	{
+		categoryId: 7,
+		productId: 2
+	},
+	{
+		categoryId: 7,
+		productId: 4
+	},
+	{
+		categoryId: 7,
+		productId: 6
+	},
+	{
+		categoryId: 7,
+		productId: 8
+	},
+	{
+		categoryId: 7,
+		productId: 10
+	},
+	{
+		categoryId: 7,
+		productId: 12
+	},
+	{
+		categoryId: 7,
+		productId: 15
+	},
+	{
+		categoryId: 7,
+		productId: 20
+	},
+
+	/*
+		Divertido
+	*/
+	{
+		categoryId: 8,
+		productId: 5
+	},
+	{
+		categoryId: 8,
+		productId: 12
+	},
+	{
+		categoryId: 8,
+		productId: 16
+	},
+	{
+		categoryId: 8,
+		productId: 18
+	},
+	{
+		categoryId: 8,
+		productId: 19
+	},
+
+	/*
+		Estrategia
+	*/
+	{
+		categoryId: 9,
+		productId: 4
+	},
+	{
+		categoryId: 9,
+		productId: 9
+	},
+	{
+		categoryId: 9,
+		productId: 13
+	},
+	{
+		categoryId: 9,
+		productId: 19
+	},
+
+	/*
+		Indie
+	*/
+	{
+		categoryId: 10,
+		productId: 1
+	},
+	{
+		categoryId: 10,
+		productId: 3
+	},
+	{
+		categoryId: 10,
+		productId: 10
+	},
+	{
+		categoryId: 10,
+		productId: 16
+	},
+
+	/*
+		Multijugador
+	*/
+	{
+		categoryId: 11,
+		productId: 3
+	},
+	{
+		categoryId: 11,
+		productId: 4
+	},
+	{
+		categoryId: 11,
+		productId: 5
+	},
+	{
+		categoryId: 11,
+		productId: 6
+	},
+	{
+		categoryId: 11,
+		productId: 8
+	},
+	{
+		categoryId: 11,
+		productId: 9
+	},
+	{
+		categoryId: 11,
+		productId: 10
+	},
+	{
+		categoryId: 11,
+		productId: 12
+	},
+	{
+		categoryId: 11,
+		productId: 13
+	},
+	{
+		categoryId: 11,
+		productId: 15
+	},
+	{
+		categoryId: 11,
+		productId: 16
+	},
+	{
+		categoryId: 11,
+		productId: 17
+	},
+	{
+		categoryId: 11,
+		productId: 18
+	},
+	{
+		categoryId: 11,
+		productId: 19
+	},
+	{
+		categoryId: 11,
+		productId: 20
+	},
+
+	/*
+		Mundo abierto
+	*/
+	{
+		categoryId: 12,
+		productId: 2
+	},
+	{
+		categoryId: 12,
+		productId: 5
+	},
+	{
+		categoryId: 12,
+		productId: 6
+	},
+	{
+		categoryId: 12,
+		productId: 7
+	},
+	{
+		categoryId: 12,
+		productId: 8
+	},
+	{
+		categoryId: 12,
+		productId: 9
+	},
+	{
+		categoryId: 12,
+		productId: 11
+	},
+	{
+		categoryId: 12,
+		productId: 12
+	},
+	{
+		categoryId: 12,
+		productId: 20
+	},
+
+	/*
+		Parkour
+	*/
+	{
+		categoryId: 13,
+		productId: 11
+	},
+	{
+		categoryId: 13,
+		productId: 15
+	},
+
+	/*
+		Por turnos
+	*/
+	{
+		categoryId: 14,
+		productId: 9
+	},
+	{
+		categoryId: 14,
+		productId: 19
+	},
+
+	/*
+		Primera Persona
+	*/
+	{
+		categoryId: 15,
+		productId: 2
+	},
+	{
+		categoryId: 15,
+		productId: 4
+	},
+	{
+		categoryId: 15,
+		productId: 8
+	},
+	{
+		categoryId: 15,
+		productId: 12
+	},
+	{
+		categoryId: 15,
+		productId: 14
+	},
+	{
+		categoryId: 15,
+		productId: 17
+	},
+	{
+		categoryId: 15,
+		productId: 20
+	},
+
+	/*
+		Rol
+	*/
+	{
+		categoryId: 16,
+		productId: 7
+	},
+	{
+		categoryId: 16,
+		productId: 12
+	},
+
+	/*
+		Supervivencia
+	*/
+	{
+		categoryId: 17,
+		productId: 4
+	},
+	{
+		categoryId: 17,
+		productId: 14
+	},
+	{
+		categoryId: 17,
+		productId: 18
+	},
+	{
+		categoryId: 17,
+		productId: 20
+	},
+
+	/*
+		Tercera persona
+	*/
+	{
+		categoryId: 18,
+		productId: 2
+	},
+	{
+		categoryId: 18,
+		productId: 4
+	},
+	{
+		categoryId: 18,
+		productId: 8
+	},
+	{
+		categoryId: 18,
+		productId: 11
+	},
+	{
+		categoryId: 18,
+		productId: 16
+	},
+
+	/*
+		Terror
+	*/
+	{
+		categoryId: 19,
+		productId: 17
+	},
+
+	/*
+		Un jugador
+	*/
+	{
+		categoryId: 20,
+		productId: 1
+	},
+	{
+		categoryId: 20,
+		productId: 2
+	},
+	{
+		categoryId: 20,
+		productId: 7
+	},
+	{
+		categoryId: 20,
+		productId: 8
+	},
+	{
+		categoryId: 20,
+		productId: 9
+	},
+	{
+		categoryId: 20,
+		productId: 10
+	},
+	{
+		categoryId: 20,
+		productId: 11
+	},
+	{
+		categoryId: 20,
+		productId: 12
+	}
+];
+
+/* =================================================================================
+* 		[ Creación de usuarios ]
+* ================================================================================= */
+
+const User = [
+	{
+		firstName: 'Kevin',
+		lastName: 'Vega',
+		email: 'huguito@masgrande.com',
+		password: '111111111',
+		accessLevel: 2
+	},
+	{
+		firstName: 'Matias',
+		lastName: 'Lopez Klyver',
+		email: 'matias@tuculandia.com',
+		password: 'uc2020',
+		accessLevel: 2
+	},
+	{
+		firstName: 'Manuel',
+		lastName: 'Lozano',
+		email: 'manu96_lp@hotmail.com',
+		password: '1234',
+		accessLevel: 2
+	},
+	{
+		firstName: 'Santi',
+		lastName: 'Martinez',
+		email: 'asado@ux.com',
+		password: '555555555',
+		accessLevel: 2
+	},
+	{
+		firstName: 'Franco',
+		lastName: 'Bonomo',
+		email: 'streamer@tetris.com',
+		password: '666666666',
+		accessLevel: 2
+	},
+	{
+		firstName: 'Carlos',
+		lastName: 'Saballe',
+		email: 'carlos@saballe.com',
+		password: '7777',
+		accessLevel: 2
+	},
+	{
+		firstName: "Just",
+		lastName: "Admin",
+		email: "just@admin.com",
+		password: "1234",
+		accessLevel: 1
+	},
+	{
+		firstName: "Keen",
+		lastName: "Pohl",
+		email: "k@hotmail.com",
+		password: "kkk",
+		accessLevel: 0
+	},
+	{
+		firstName: 'Niel',
+		lastName: 'Hartnup',
+		email: 'nhartnup0@issuu.com',
+		password: 'Portuguese',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Vale',
+		lastName: 'Schlagh',
+		email: 'vschlagh1@github.io',
+		password: 'Kyrgyz',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Cynthie',
+		lastName: 'Grindall',
+		email: 'cgrindall2@lulu.com',
+		password: 'Swedish',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Pammi',
+		lastName: 'Aldis',
+		email: 'paldis3@mozilla.com',
+		password: 'Ndebele',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Pascale',
+		lastName: 'Shrubsall',
+		email: 'pshrubsall4@npr.org',
+		password: 'Haitian Creole',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Raquela',
+		lastName: 'Rozec',
+		email: 'rrozec5@barnesandnoble.com',
+		password: 'Punjabi',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Ilse',
+		lastName: 'McAllister',
+		email: 'imcallister6@apple.com',
+		password: 'Korean',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Shawn',
+		lastName: 'Greveson',
+		email: 'sgreveson7@howstuffworks.com',
+		password: 'Filipino',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Bernita',
+		lastName: 'Piscot',
+		email: 'bpiscot8@baidu.com',
+		password: 'Tok Pisin',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Meriel',
+		lastName: 'Gurrado',
+		email: 'mgurrado9@de.vu',
+		password: 'Kyrgyz',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Bastien',
+		lastName: 'Snowball',
+		email: 'bsnowballa@friendfeed.com',
+		password: 'Norwegian',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Grissel',
+		lastName: 'Balaam',
+		email: 'gbalaamb@creativecommons.org',
+		password: 'Kyrgyz',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Mathilde',
+		lastName: 'Giraudy',
+		email: 'mgiraudyd@uol.com.br',
+		password: 'Tetum',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Salmon',
+		lastName: 'Gouthier',
+		email: 'sgouthiere@nyu.edu',
+		password: 'Oriya',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Sheree',
+		lastName: 'Mayston',
+		email: 'smaystonf@msu.edu',
+		password: 'Nepali',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Talya',
+		lastName: 'Medlen',
+		email: 'tmedleng@mysql.com',
+		password: 'English',
+		accessLevel: 0
+	},
+	{
+		firstName: 'Kahaleel',
+		lastName: 'Eilert',
+		email: 'keilerth@icq.com',
+		password: 'Malagasy',
+		accessLevel: 0
+	}
+];
+
+/* =================================================================================
+* 		[ Creación de relación entre Orden y Usuario ]
+* ================================================================================= */
+
+const Order = [
+	/*
+		Ordenes del usuario con id 1
+	*/
+	{
+		status: 'cart',
+		userId: 1
+	},
+	{
+		status: 'canceled',
+		userId: 1
+	},
+	{
+		status: 'completed',
+		userId: 1
+	},
+	/*
+		Ordenes del usuario con id 2
+	*/
+	{
+		status: 'cart',
+		userId: 2
+	},
+	{
+		status: 'completed',
+		userId: 2
+	},
+	{
+		status: 'completed',
+		userId: 2
+	},
+	{
+		status: 'completed',
+		userId: 2
+	},
+	/*
+		Ordenes del usuario con id 3
+	*/
+	{
+		status: 'cart',
+		userId: 3
+	},
+	{
+		status: 'canceled',
+		userId: 3
+	},
+	{
+		status: 'canceled',
+		userId: 3
+	},
+	{
+		status: 'completed',
+		userId: 3
+	},
+	/*
+		Ordenes del usuario con id 4
+	*/
+	{
+		status: 'completed',
+		userId: 4
+	},
+	{
+		status: 'cart',
+		userId: 4
+	},
+	{
+		status: 'canceled',
+		userId: 4
+	},
+	{
+		status: 'canceled',
+		userId: 4
+	},
+	/*
+		Ordenes del usuario con id 5
+	*/
+	{
+		status: 'cart',
+		userId: 5
+	},
+	{
+		status: 'completed',
+		userId: 5
+	},
+	{
+		status: 'canceled',
+		userId: 5
+	},
+	{
+		status: 'completed',
+		userId: 5
+	},
+	/*
+		Ordenes del usuario con id 6
+	*/
+	{
+		status: 'cart',
+		userId: 6
+	},
+	{
+		status: 'completed',
+		userId: 6
+	},
+	{
+		status: 'canceled',
+		userId: 6
+	},
+	{
+		status: 'canceled',
+		userId: 6
+	},
+	/*
+		Ordenes del usuario con id 7
+	*/
+	{
+		status: 'canceled',
+		userId: 7
+	},
+	{
+		status: 'completed',
+		userId: 7
+	},
+	{
+		status: 'completed',
+		userId: 7
+	},
+	/*
+		Ordenes del usuario con id 8
+	*/
+	{
+		status: 'canceled',
+		userId: 8
+	},
+	{
+		status: 'completed',
+		userId: 8
+	},
+	{
+		status: 'completed',
+		userId: 8
+	},
+	{
+		status: 'completed',
+		userId: 8
+	},
+	/*
+		Ordenes del usuario con id 9
+	*/
+	{
+		status: 'canceled',
+		userId: 9
+	},
+	{
+		status: 'canceled',
+		userId: 9
+	},
+	{
+		status: 'canceled',
+		userId: 9
+	},
+	{
+		status: 'completed',
+		userId: 9
+	},
+	/*
+		Ordenes del usuario con id 10
+	*/
+	{
+		status: 'cart',
+		userId: 10
+	},
+	{
+		status: 'canceled',
+		userId: 10
+	},
+	{
+		status: 'canceled',
+		userId: 10
+	}
+];
+
+/* =================================================================================
+* 		[ Creación de relaciones entre Orden y Producto ]
+* ================================================================================= */
+
+const OrderProduct = [
+	/*
+		Orden id 1
+	*/
+	{
+		orderId: 1,
+		productId: 1,
+		quantity: 1,
+		price: 3.99
+	},
+	{
+		orderId: 1,
+		productId: 2,
+		quantity: 2,
+		price: 38.99
+	},
+	{
+		orderId: 1,
+		productId: 3,
+		quantity: 1,
+		price: 4.99
+	},
+	{
+		orderId: 1,
+		productId: 4,
+		quantity: 2,
+		price: 29.99
+	},
+	/*
+		Orden id 2
+	*/
+	{
+		orderId: 2,
+		productId: 5,
+		quantity: 1,
+		price: 39.99
+	},
+	{
+		orderId: 2,
+		productId: 6,
+		quantity: 3,
+		price: 39.99
+	},
+	{
+		orderId: 2,
+		productId: 7,
+		quantity: 1,
+		price: 19.96
+	},
+	{
+		orderId: 2,
+		productId: 8,
+		quantity: 1,
+		price: 10.99
+	},
+	/*
+		Orden id 3
+	*/
+	{
+		orderId: 3,
+		productId: 9,
+		quantity: 1,
+		price: 7.99
+	},
+	{
+		orderId: 3,
+		productId: 10,
+		quantity: 2,
+		price: 6
+	},
+	{
+		orderId: 3,
+		productId: 8,
+		quantity: 1,
+		price: 10.99
+	},
+	{
+		orderId: 3,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	/*
+		Orden id 4
+	*/
+	{
+		orderId: 4,
+		productId: 1,
+		quantity: 1,
+		price: 3.99
+	},
+	{
+		orderId: 4,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	{
+		orderId: 4,
+		productId: 3,
+		quantity: 1,
+		price: 4.99
+	},
+	{
+		orderId: 4,
+		productId: 4,
+		quantity: 1,
+		price: 29.99
+	},
+	/*
+		Orden id 5
+	*/
+	{
+		orderId: 5,
+		productId: 1,
+		quantity: 1,
+		price: 3.99
+	},
+	{
+		orderId: 5,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	{
+		orderId: 5,
+		productId: 3,
+		quantity: 1,
+		price: 4.99
+	},
+	{
+		orderId: 5,
+		productId: 4,
+		quantity: 1,
+		price: 29.99
+	},
+	/*
+		Orden id 6
+	*/
+	{
+		orderId: 6,
+		productId: 1,
+		quantity: 2,
+		price: 3.99
+	},
+	{
+		orderId: 6,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	{
+		orderId: 6,
+		productId: 3,
+		quantity: 2,
+		price: 4.99
+	},
+	{
+		orderId: 6,
+		productId: 4,
+		quantity: 3,
+		price: 29.99
+	},
+	/*
+		Orden id 7
+	*/
+	{
+		orderId: 7,
+		productId: 1,
+		quantity: 2,
+		price: 3.99
+	},
+	{
+		orderId: 7,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	{
+		orderId: 7,
+		productId: 3,
+		quantity: 2,
+		price: 4.99
+	},
+	{
+		orderId: 7,
+		productId: 4,
+		quantity: 3,
+		price: 29.99
+	},
+	/*
+		Orden id 8
+	*/
+	{
+		orderId: 8,
+		productId: 1,
+		quantity: 2,
+		price: 3.99
+	},
+	{
+		orderId: 8,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	{
+		orderId: 8,
+		productId: 3,
+		quantity: 2,
+		price: 4.99
+	},
+	{
+		orderId: 8,
+		productId: 4,
+		quantity: 3,
+		price: 29.99
+	},
+	/*
+		Orden id 9
+	*/
+	{
+		orderId: 9,
+		productId: 1,
+		quantity: 2,
+		price: 3.99
+	},
+	{
+		orderId: 9,
+		productId: 2,
+		quantity: 1,
+		price: 38.99
+	},
+	{
+		orderId: 9,
+		productId: 3,
+		quantity: 2,
+		price: 4.99
+	},
+	{
+		orderId: 9,
+		productId: 4,
+		quantity: 3,
+		price: 29.99
+	},
+	/*
+		Orden id 10
+	*/
+	{
+		orderId: 10,
+		productId: 1,
+		quantity: 1,
+		price: 3.99
+	},
+	{
+		orderId: 10,
+		productId: 2,
+		quantity: 2,
+		price: 38.99
+	},
+	{
+		orderId: 10,
+		productId: 3,
+		quantity: 1,
+		price: 4.99
+	},
+	{
+		orderId: 10,
+		productId: 4,
+		quantity: 2,
+		price: 29.99
+	},
+	/*
+		Orden id 11
+	*/
+	{
+		orderId: 11,
+		productId: 13,
+		quantity: 2,
+		price: 14.56
+	},
+	{
+		orderId: 11,
+		productId: 6,
+		quantity: 4,
+		price: 3.83
+	},
+	{
+		orderId: 11,
+		productId: 14,
+		quantity: 2,
+		price: 27.19
+	},
+	{
+		orderId: 11,
+		productId: 5,
+		quantity: 2,
+		price: 12.43
+	},
+	/*
+		Orden id 12
+	*/
+	{
+		orderId: 12,
+		productId: 17,
+		quantity: 2,
+		price: 29.87
+	},
+	{
+		orderId: 12,
+		productId: 5,
+		quantity: 4,
+		price: 13.05
+	},
+	{
+		orderId: 12,
+		productId: 3,
+		quantity: 1,
+		price: 22.57
+	},
+	{
+		orderId: 12,
+		productId: 12,
+		quantity: 3,
+		price: 3.93
+	},
+	/*
+		Orden id 13
+	*/
+	{
+		orderId: 13,
+		productId: 15,
+		quantity: 1,
+		price: 17.09
+	},
+	{
+		orderId: 13,
+		productId: 1,
+		quantity: 3,
+		price: 24.61
+	},
+	{
+		orderId: 15,
+		productId: 16,
+		quantity: 1,
+		price: 8.35
+	},
+	{
+		orderId: 13,
+		productId: 5,
+		quantity: 4,
+		price: 11.61
+	},
+	/*
+		Orden id 14
+	*/
+	{
+		orderId: 14,
+		productId: 20,
+		quantity: 3,
+		price: 19.31
+	},
+	{
+		orderId: 14,
+		productId: 14,
+		quantity: 4,
+		price: 20.94
+	},
+	{
+		orderId: 14,
+		productId: 3,
+		quantity: 3,
+		price: 25.19
+	},
+	{
+		orderId: 14,
+		productId: 8,
+		quantity: 4,
+		price: 7.98
+	},
+	/*
+		Orden id 15
+	*/
+	{
+		orderId: 15,
+		productId: 1,
+		quantity: 3,
+		price: 6.09
+	},
+	{
+		orderId: 15,
+		productId: 13,
+		quantity: 3,
+		price: 16.91
+	},
+	{
+		orderId: 15,
+		productId: 9,
+		quantity: 2,
+		price: 7.47
+	},
+	{
+		orderId: 15,
+		productId: 5,
+		quantity: 1,
+		price: 5.74
+	},
+	/*
+		Orden id 16
+	*/
+	{
+		orderId: 16,
+		productId: 16,
+		quantity: 4,
+		price: 12.85
+	}, 
+	{
+		orderId: 16,
+		productId: 19,
+		quantity: 3,
+		price: 10.08
+	}, 
+	{
+		orderId: 16,
+		productId: 18,
+		quantity: 3,
+		price: 2.56
+	}, 
+	{
+		orderId: 16,
+		productId: 15,
+		quantity: 1,
+		price: 20.51
+	},
+	/*
+		Orden id 17
+	*/
+	{
+		orderId: 17,
+		productId: 18,
+		quantity: 2,
+		price: 18.93
+	}, 
+	{
+		orderId: 17,
+		productId: 14,
+		quantity: 1,
+		price: 27.18
+	}, 
+	{
+		orderId: 17,
+		productId: 9,
+		quantity: 3,
+		price: 3.56
+	}, 
+	{
+		orderId: 17,
+		productId: 19,
+		quantity: 1,
+		price: 23.3
+	},
+	/*
+		Orden id 18
+	*/
+	{
+		orderId: 18,
+		productId: 1,
+		quantity: 1,
+		price: 19.69
+	}, 
+	{
+		orderId: 18,
+		productId: 2,
+		quantity: 1,
+		price: 21.18
+	}, 
+	{
+		orderId: 18,
+		productId: 10,
+		quantity: 3,
+		price: 3.47
+	}, 
+	{
+		orderId: 18,
+		productId: 9,
+		quantity: 2,
+		price: 29.49
+	},
+	/*
+		Orden id 19
+	*/
+	{
+		orderId: 19,
+		productId: 13,
+		quantity: 2,
+		price: 10.67
+	}, 
+	{
+		orderId: 19,
+		productId: 10,
+		quantity: 2,
+		price: 12.56
+	}, 
+	{
+		orderId: 19,
+		productId: 2,
+		quantity: 1,
+		price: 11.25
+	}, 
+	{
+		orderId: 19,
+		productId: 15,
+		quantity: 2,
+		price: 24.15
+	},
+	/*
+		Orden id 20
+	*/
+	{
+		orderId: 20,
+		productId: 9,
+		quantity: 1,
+		price: 16.13
+	}, 
+	{
+		orderId: 20,
+		productId: 10,
+		quantity: 1,
+		price: 27.04
+	}, 
+	{
+		orderId: 20,
+		productId: 13,
+		quantity: 4,
+		price: 22.88
+	}, 
+	{
+		orderId: 20,
+		productId: 18,
+		quantity: 4,
+		price: 14.35
+	},
+	/*
+		Orden id 21
+	*/
+	{
+		orderId: 21,
+		productId: 15,
+		quantity: 1,
+		price: 5.69
+	}, 
+	{
+		orderId: 21,
+		productId: 7,
+		quantity: 1,
+		price: 17.43
+	}, 
+	{
+		orderId: 21,
+		productId: 9,
+		quantity: 4,
+		price: 3.41
+	}, 
+	{
+		orderId: 21,
+		productId: 11,
+		quantity: 2,
+		price: 26.2
+	},
+	/*
+		Orden id 22
+	*/
+	{
+		orderId: 22,
+		productId: 19,
+		quantity: 3,
+		price: 29.86
+	}, 
+	{
+		orderId: 22,
+		productId: 13,
+		quantity: 1,
+		price: 27.62
+	}, 
+	{
+		orderId: 22,
+		productId: 5,
+		quantity: 1,
+		price: 9.04
+	}, 
+	{
+		orderId: 22,
+		productId: 18,
+		quantity: 2,
+		price: 23.53
+	},
+	/*
+		Orden id 23
+	*/
+	{
+		orderId: 23,
+		productId: 12,
+		quantity: 4,
+		price: 24.44
+	}, 
+	{
+		orderId: 23,
+		productId: 14,
+		quantity: 4,
+		price: 9.98
+	}, 
+	{
+		orderId: 23,
+		productId: 15,
+		quantity: 3,
+		price: 26.06
+	}, 
+	{
+		orderId: 23,
+		productId: 18,
+		quantity: 4,
+		price: 7.65
+	},
+	/*
+		Orden id 24
+	*/
+	{
+		orderId: 24,
+		productId: 10,
+		quantity: 4,
+		price: 21.4
+	}, 
+	{
+		orderId: 24,
+		productId: 18,
+		quantity: 3,
+		price: 18.28
+	}, 
+	{
+		orderId: 24,
+		productId: 1,
+		quantity: 2,
+		price: 23.15
+	}, 
+	{
+		orderId: 24,
+		productId: 2,
+		quantity: 1,
+		price: 26.19
+	},
+	/*
+		Orden id 25
+	*/
+	{
+		orderId: 25,
+		productId: 19,
+		quantity: 1,
+		price: 1.38
+	}, 
+	{
+		orderId: 25,
+		productId: 12,
+		quantity: 3,
+		price: 12.89
+	}, 
+	{
+		orderId: 25,
+		productId: 16,
+		quantity: 2,
+		price: 27.92
+	}, 
+	{
+		orderId: 25,
+		productId: 9,
+		quantity: 1,
+		price: 10.22
+	},
+	/*
+		Orden id 26
+	*/
+	{
+		orderId: 26,
+		productId: 8,
+		quantity: 3,
+		price: 21.81
+	}, 
+	{
+		orderId: 26,
+		productId: 18,
+		quantity: 4,
+		price: 15.41
+	}, 
+	{
+		orderId: 26,
+		productId: 14,
+		quantity: 1,
+		price: 29.59
+	}, 
+	{
+		orderId: 26,
+		productId: 20,
+		quantity: 1,
+		price: 10.09
+	},
+	/*
+		Orden id 27
+	*/
+	{
+		orderId: 27,
+		productId: 11,
+		quantity: 4,
+		price: 24.94
+	}, 
+	{
+		orderId: 27,
+		productId: 3,
+		quantity: 2,
+		price: 17.17
+	}, 
+	{
+		orderId: 27,
+		productId: 1,
+		quantity: 4,
+		price: 8.61
+	}, 
+	{
+		orderId: 27,
+		productId: 12,
+		quantity: 1,
+		price: 24.1
+	},
+	/*
+		Orden id 28
+	*/
+	{
+		orderId: 28,
+		productId: 1,
+		quantity: 4,
+		price: 25.5
+	}, 
+	{
+		orderId: 28,
+		productId: 6,
+		quantity: 1,
+		price: 12.59
+	}, 
+	{
+		orderId: 28,
+		productId: 10,
+		quantity: 1,
+		price: 19.11
+	}, 
+	{
+		orderId: 28,
+		productId: 7,
+		quantity: 4,
+		price: 8.37
+	},
+	/*
+		Orden id 29
+	*/
+	{
+		orderId: 29,
+		productId: 3,
+		quantity: 3,
+		price: 6.94
+	}, 
+	{
+		orderId: 29,
+		productId: 18,
+		quantity: 2,
+		price: 9.7
+	}, 
+	{
+		orderId: 29,
+		productId: 2,
+		quantity: 2,
+		price: 27.68
+	}, 
+	{
+		orderId: 29,
+		productId: 14,
+		quantity: 3,
+		price: 16.93
+	},
+	/*
+		Orden id 30
+	*/
+	{
+		orderId: 30,
+		productId: 19,
+		quantity: 2,
+		price: 28.97
+	}, 
+	{
+		orderId: 30,
+		productId: 20,
+		quantity: 1,
+		price: 8.61
+	}, 
+	{
+		orderId: 30,
+		productId: 16,
+		quantity: 2,
+		price: 5.13
+	}, 
+	{
+		orderId: 30,
+		productId: 9,
+		quantity: 4,
+		price: 1.96
+	},
+	/*
+		Orden id 31
+	*/
+	{
+		orderId: 31,
+		productId: 14,
+		quantity: 4,
+		price: 5.65
+	}, 
+	{
+		orderId: 31,
+		productId: 15,
+		quantity: 1,
+		price: 5.87
+	}, 
+	{
+		orderId: 31,
+		productId: 12,
+		quantity: 3,
+		price: 26.57
+	}, 
+	{
+		orderId: 31,
+		productId: 17,
+		quantity: 2,
+		price: 17.22
+	},
+	/*
+		Orden id 32
+	*/
+	{
+		orderId: 32,
+		productId: 3,
+		quantity: 4,
+		price: 24.64
+	}, 
+	{
+		orderId: 32,
+		productId: 2,
+		quantity: 2,
+		price: 6.19
+	}, 
+	{
+		orderId: 32,
+		productId: 20,
+		quantity: 1,
+		price: 28.84
+	}, 
+	{
+		orderId: 32,
+		productId: 5,
+		quantity: 3,
+		price: 25.81
+	},
+	/*
+		Orden id 33
+	*/
+	{
+		orderId: 33,
+		productId: 6,
+		quantity: 2,
+		price: 25.24
+	}, 
+	{
+		orderId: 33,
+		productId: 13,
+		quantity: 3,
+		price: 1.66
+	}, 
+	{
+		orderId: 33,
+		productId: 1,
+		quantity: 4,
+		price: 27.64
+	}, 
+	{
+		orderId: 33,
+		productId: 4,
+		quantity: 4,
+		price: 8.06
+	},
+	/*
+		Orden id 34
+	*/
+	{
+		orderId: 34,
+		productId: 1,
+		quantity: 1,
+		price: 1.02
+	}, 
+	{
+		orderId: 34,
+		productId: 9,
+		quantity: 2,
+		price: 6.26
+	}, 
+	{
+		orderId: 34,
+		productId: 7,
+		quantity: 1,
+		price: 7.95
+	}, 
+	{
+		orderId: 34,
+		productId: 5,
+		quantity: 4,
+		price: 22.58
+	},
+	/*
+		Orden id 35
+	*/
+	{
+		orderId: 35,
+		productId: 3,
+		quantity: 3,
+		price: 18.9
+	}, 
+	{
+		orderId: 35,
+		productId: 20,
+		quantity: 1,
+		price: 24.11
+	}, 
+	{
+		orderId: 35,
+		productId: 18,
+		quantity: 1,
+		price: 23.56
+	}, 
+	{
+		orderId: 35,
+		productId: 17,
+		quantity: 2,
+		price: 4.94
+	},
+	/*
+		Orden id 36
+	*/
+	{
+		orderId: 36,
+		productId: 6,
+		quantity: 2,
+		price: 24.41
+	}, 
+	{
+		orderId: 36,
+		productId: 8,
+		quantity: 1,
+		price: 8.78
+	}, 
+	{
+		orderId: 36,
+		productId: 16,
+		quantity: 2,
+		price: 3.29
+	}, 
+	{
+		orderId: 36,
+		productId: 9,
+		quantity: 3,
+		price: 20.28
+	},
+	/*
+		Orden id 37
+	*/
+	{
+		orderId: 37,
+		productId: 20,
+		quantity: 3,
+		price: 25.19
+	}, 
+	{
+		orderId: 37,
+		productId: 12,
+		quantity: 1,
+		price: 29.11
+	}, 
+	{
+		orderId: 37,
+		productId: 5,
+		quantity: 2,
+		price: 3.77
+	}, 
+	{
+		orderId: 37,
+		productId: 11,
+		quantity: 1,
+		price: 24.99
+	}
+];
+
+/* =================================================================================
+* 		[ Exportamos los objetos creados anteriormente ]
+* ================================================================================= */
+
+module.exports = {
+	Product,
+	Category,
+	Media,
+	ProductCategory,
+	User,
+	Order,
+	OrderProduct
+};

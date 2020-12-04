@@ -1,0 +1,75 @@
+.cartCard__container
+{
+    .card
+    {
+        margin: 0.5rem 0 0.5rem 0;
+        border-top: 1px solid $light-grey;
+        
+        .card-body
+        {
+            padding-bottom: 0rem;
+        }
+    }
+
+    h1
+    {
+        font-family: $kanit;
+        color: $white;
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        font-style: italic;
+    }
+
+    input
+    {
+        margin-top: 0.8rem;
+        font-family: $kanit;
+        background-color: transparent;
+        border: 0px solid transparent;
+        color: $white;
+        width: 2.25rem;
+    }
+
+    input:focus
+    {
+        outline: none;
+    }
+
+    input[ type=number ]::-webkit-inner-spin-button, 
+    input[ type=number ]::-webkit-outer-spin-button
+    {  
+        opacity: 1;
+    }
+}
+
+.cartCard__price
+{
+    float: right;
+    margin-top: 0.5rem;
+}
+
+.cartCard__body
+{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+
+    .mod-qty-btn{
+        display: inline-block;
+        background: transparent;
+        border-radius: 1em;
+        color: $white;
+        font-weight: bold;
+        font-size: 90%;
+        line-height: 1em;
+        text-align: center;
+        width: 1.7em; 
+        margin: 0 .7em 0 .7em;
+    }
+
+    .delete-btn {
+        font-size:smaller;
+        text-decoration: none;
+    }
+}

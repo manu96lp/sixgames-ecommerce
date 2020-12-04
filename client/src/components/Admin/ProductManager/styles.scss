@@ -1,0 +1,119 @@
+.formAdmin-container{
+    background-color: $grey;
+    padding: 2rem 10% 0rem 10%;
+}
+
+.formAdmin-group{
+    color: white;
+    font-family: $barlow;
+    font-style: normal;
+    font-size: 1.8rem;
+        .form-control{
+            min-height: 3.6rem;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .form-check-input{
+            min-width: 1.5rem;
+            min-height: 1.5rem;
+        }
+        label{
+            display: block;
+        }
+        button{
+            margin-bottom: 2rem;
+        }
+}
+
+
+.formAdmin-title{
+    color: white;
+    text-align: center;
+    font-family: $kanit;
+    padding-bottom: 0.5rem;
+    background-color: $black;
+    margin: 2rem 0rem;
+}
+
+
+.formAdmin-delete-container{
+    background-color: $grey;
+    font-family: $barlow;
+        .form-control{
+            font-size: 1.6rem !important;
+        }
+        #productList{
+            margin-top: 1rem;
+            min-height: 40vh;
+        }
+}
+
+.formAdmin-submit-button{
+    float: right;
+    display: block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.formAdmin-updateButton{
+    overflow: auto;
+}
+
+.label-switch {
+    display: flex;
+    justify-content: space-between;
+
+    .custom-control-label { 
+        display: inline;
+        width: min-content;
+        &:before {
+            padding-top: 1.15rem;
+            padding-right: 1.85rem;
+            margin-top: 1.5rem;
+            border-radius: 15px;
+            margin-left: 0.13rem;
+            border: none !important;
+        }
+        &:after {
+            margin-top: 1.35rem;
+            border-radius: 100%;
+            padding: 0.57rem;
+        }
+    }
+}
+
+
+
+.custom-control-label { 
+    font-size: 1rem !important;
+    padding-bottom: 0.6rem;
+    padding-top: 0.5rem;
+     &:before {
+        padding-top: 1.15rem;
+        padding-right: 1.85rem;
+        margin-top: 0.5rem;
+        border-radius: 15px;
+        margin-left: 0.13rem;
+        border: none !important;
+    }
+    &:after {
+        margin-top: 0.37rem;
+        border-radius: 100%;
+        padding: 0.57rem;
+    }
+}
+
+.categories-container {
+    border: $light-grey solid 1px;
+    border-radius: .35rem;
+    padding: .5rem 0 .5rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.create-product-button-submit {
+    float: right;
+}
+
+

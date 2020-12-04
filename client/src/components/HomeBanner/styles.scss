@@ -1,0 +1,86 @@
+.principalCard-container
+{
+	margin: 1rem 3rem 1rem 3rem;
+	background-color: $grey;
+	border-radius: 10px;
+	border: $light-grey 2px solid;
+	color: $white;
+	font-family: $barlow;
+	overflow: hidden;
+
+	.col
+	{
+		padding: 0;
+	}
+
+	.card-title
+	{
+		font-size: 3.5rem;
+	}
+
+	.card-text
+	{
+		max-width: 27rem;
+		font-size: 1.1rem;
+		text-align: justify;
+	}
+
+	&:after
+	{
+		content: "";
+		width: 65%;
+		height: 100%;
+		background-color: $grey;
+		transform: skewX( -18deg );
+		transition: 1.5s;
+		position: absolute;
+		left: 45%;
+	}
+
+	.principalCard-text-one
+	{
+		position: absolute;
+		left: 3rem;
+		transition: 1.5s;
+		z-index: 1;
+	}
+
+	.principalCard-text-two
+	{
+		position: absolute;
+		left: 3rem;
+		transition: 1.5s;
+		color: transparent;
+		z-index: 1;
+
+		.card-title
+		{
+			font-size: 3rem;
+		}
+	}
+
+	&:hover
+	{
+		.principalCard-text-one
+		{
+			position: absolute;
+			left: 3rem;
+			color: transparent;
+			transition: 1.5s;
+		}
+
+		.principalCard-text-two
+		{
+			position: absolute;
+			left: 3rem;
+			transition: 1.5s;
+			color: $white;
+			z-index: 1;
+		}
+
+		&:after
+		{
+			left: -10%;
+		}
+	}
+}

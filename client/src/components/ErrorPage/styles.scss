@@ -1,0 +1,22 @@
+.error-page__wrapper
+{
+	display: block;
+	padding: 1rem;
+	color: #ccc;
+	text-align: center;
+	margin-top: 7rem;
+	
+	h2
+	{
+		font-size: calc( 5rem + 5vw );
+		user-select: none;
+		margin-bottom: 2rem;
+	}
+	
+	a
+	{
+		text-decoration: none;
+		font-weight: 600;
+		color: #acdaff;
+	}
+}
